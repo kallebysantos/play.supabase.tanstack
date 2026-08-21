@@ -13,8 +13,9 @@ const config = defineConfig({
   plugins: [
     devtools(),
     nitro({
-      //baseURL: '/app',
-      noExternals: true,
+      baseURL: '/workers/v1/tanstack',
+      // baseURL: '/workers/v1/tanstack',
+      // noExternals: true,
       plugins: [
         './src/plugins/supabase.ts'
       ],

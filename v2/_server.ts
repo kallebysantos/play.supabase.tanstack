@@ -1,4 +1,4 @@
-const server = {}
+import TanStackServer from "@tanstack/react-start/server-entry";
 
 export default {
   async fetch(req: Request) {
@@ -20,5 +20,7 @@ export default {
       path: url.pathname,
     });
       */
+
+    // return await TanStackServer.fetch(req)
   }
 }
