@@ -8,18 +8,23 @@ import tailwindcss from '@tailwindcss/vite'
 import { nitro } from 'nitro/vite'
 
 const config = defineConfig({
-  base: "",
+  base: "/workers/v1/tanstack",
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
     nitro({
+      //baseURL: '/app',
+      noExternals: true,
+      plugins: [
+        './src/plugins/supabase.ts'
+      ],
       rollupConfig: { external: [/^@sentry\//] }
     }),
     tailwindcss(),
     tanstackStart({
-      client: {
-        base: "/workers/v1/supabase-tanstack"
-      }
+      // router: {
+      //   basepath: '/app'
+      // }
     }),
     viteReact(),
   ],
