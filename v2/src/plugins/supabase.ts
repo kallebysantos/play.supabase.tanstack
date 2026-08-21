@@ -1,7 +1,7 @@
 import { definePlugin } from "nitro";
 
-const BASE_PATH = process.env.TANSTACK_BASE_PATH ?? '/workers/v1/tanstack';
-const URL_REWRITE = !!process.env.URL_REWRITE
+const BASE_PATH = '/workers/v1/tanstack-final';
+const URL_REWRITE = true
 
 export default definePlugin((nitroApp) => {
   console.log('Supabase PLUGIN:', URL_REWRITE)
